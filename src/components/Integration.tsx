@@ -23,7 +23,7 @@ export interface IntegrationProps {
 
 export default function Integration({ title, summary, requiresLogin, systems, component, accessToken, loggedIn, setLoggedIn, apiURL }: IntegrationProps) {
     const requiresLoginElement = requiresLogin
-        ? <Chip label="Requires login" sx={{ mr: 1, color: grey[700], bgcolor: grey[50] }} />
+        ? <Chip label="Requires login" sx={{ borderRadius: 0, textTransform: 'uppercase', fontWeight: 'bold', mr: 1, color: grey[700], bgcolor: grey[50] }} />
         : <></>;
 
     let componentElement = <></>;

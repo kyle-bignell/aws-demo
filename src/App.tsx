@@ -119,7 +119,7 @@ export default function App() {
 
       <Container>
         <Typography variant="h1" align="center" sx={{ color: 'rgb(8 145 178)', mt: 12 }}>AWS Integrations Demo</Typography>
-        <Typography variant="h2" align="center" sx={{ color: 'rgb(55 65 81)', mb: 12 }}>
+        <Typography variant="h3" align="center" sx={{ color: 'rgb(55 65 81)', mb: 12 }}>
           Kyle Bignell
         </Typography>
 

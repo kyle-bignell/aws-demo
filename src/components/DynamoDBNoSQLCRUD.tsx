@@ -193,7 +193,7 @@ export default function DynamoDBNoSQLCRUD(loggedIn: boolean, accessToken: string
         <Box>
             <Typography variant="h3" align="left" sx={{ color: 'rgb(55 65 81)' }} gutterBottom={true}>
                 Entries
-                <Button variant="contained" sx={{ mx: 2, bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onRefreshClickHandler}>Refresh</Button>
+                <Button variant="contained" sx={{ borderRadius: 0, mx: 2, bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onRefreshClickHandler}>Refresh</Button>
             </Typography>
 
             <Box sx={{ mb: 5 }}>
@@ -216,7 +216,7 @@ export default function DynamoDBNoSQLCRUD(loggedIn: boolean, accessToken: string
                                     <TableCell component="th" scope="row">{databaseEntry.id.S}</TableCell>
                                     <TableCell align="left">{databaseEntry.name.S}</TableCell>
                                     <TableCell align="right">{databaseEntry.price.S}</TableCell>
-                                    <TableCell align="right"><Button variant="contained" color="error" onClick={() => onDeleteEntryClickHandler(databaseEntry.id.S)}>Delete</Button></TableCell>
+                                    <TableCell align="right"><Button sx={{ borderRadius: 0 }} variant="contained" color="error" onClick={() => onDeleteEntryClickHandler(databaseEntry.id.S)}>Delete</Button></TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
@@ -232,7 +232,7 @@ export default function DynamoDBNoSQLCRUD(loggedIn: boolean, accessToken: string
                             <TextField label="Id" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={addEntryId} onChange={onAddEntryIdChangeHandler} />
                             <TextField label="Name" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={addEntryName} onChange={onAddEntryNameChangeHandler} />
                             <TextField label="Price" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={addEntryPrice} onChange={onAddEntryPriceChangeHandler} />
-                            <Button variant="contained" sx={{ bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onAddEntryClickHandler}>Add entry</Button>
+                            <Button variant="contained" sx={{ borderRadius: 0, bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onAddEntryClickHandler}>Add entry</Button>
                         </Stack>
                     </Box>
                 </Grid>
@@ -241,7 +241,7 @@ export default function DynamoDBNoSQLCRUD(loggedIn: boolean, accessToken: string
                         <Typography variant="h3" align="left" sx={{ color: 'rgb(55 65 81)' }} gutterBottom={true}>Get entry</Typography>
                         <Stack spacing={1}>
                             <TextField label="Id" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={getEntryId} onChange={onGetEntryIdChangeHandler} />
-                            <Button variant="contained" sx={{ bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onGetEntryClickHandler}>Get entry</Button>
+                            <Button variant="contained" sx={{ borderRadius: 0, bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onGetEntryClickHandler}>Get entry</Button>
                         </Stack>
                     </Box>
                 </Grid>

@@ -129,7 +129,7 @@ export default function S3FileStorage(loggedIn: boolean, accessToken: string | n
         <Box>
             <Typography variant="h3" align="left" sx={{ color: 'rgb(55 65 81)' }} gutterBottom={true}>
                 Files
-                <Button variant="contained" sx={{ mx: 2, bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onRefreshClickHandler}>Refresh</Button>
+                <Button variant="contained" sx={{ borderRadius: 0, mx: 2, bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onRefreshClickHandler}>Refresh</Button>
             </Typography>
 
             <Box sx={{ mb: 5 }}>
@@ -160,7 +160,7 @@ export default function S3FileStorage(loggedIn: boolean, accessToken: string | n
 
             <Box sx={{ mb: 5 }}>
                 <Typography variant="h3" align="left" sx={{ color: 'rgb(55 65 81)' }} gutterBottom={true}>File upload</Typography>
-                <Button variant="contained" sx={{ bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} component="label">
+                <Button variant="contained" sx={{ borderRadius: 0, bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} component="label">
                     Upload File
                     <input
                         type="file" onChange={onUploadChangeHandler} hidden
