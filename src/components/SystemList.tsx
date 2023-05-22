@@ -1,3 +1,4 @@
+import { grey } from '@mui/material/colors';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import AWSAPIGatewayIcon from "./icons/AWSAPIGatewayIcon";
@@ -42,7 +43,7 @@ export default function SystemList({ systems }: { systems: Systems }) {
         <Grid container spacing={2}>
             {systems.map(system => {
                 return <Grid xs={12} sm={6} md={3} key={system}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', color: 'primary.contrastText', bgcolor: 'rgb(55 65 81)' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', color: grey[50], bgcolor: grey[800] }}>
                         <Box sx={{ mr: 1, p: 0, height: '40px' }}>
                             {systemIconMap[system]()}
                         </Box>

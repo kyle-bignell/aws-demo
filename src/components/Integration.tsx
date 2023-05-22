@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
+import { grey } from '@mui/material/colors';
 import Typography from '@mui/material/Typography';
 import DynamoDBNoSQLCRUD from './DynamoDBNoSQLCRUD';
 import Login from './Login';
@@ -22,7 +23,7 @@ export interface IntegrationProps {
 
 export default function Integration({ title, summary, requiresLogin, systems, component, accessToken, loggedIn, setLoggedIn, apiURL }: IntegrationProps) {
     const requiresLoginElement = requiresLogin
-        ? <Chip label="Requires login" sx={{ mr: 1, color: 'rgb(55 65 81)', bgcolor: 'rgb(236 254 255)' }} />
+        ? <Chip label="Requires login" sx={{ mr: 1, color: grey[700], bgcolor: grey[50] }} />
         : <></>;
 
     let componentElement = <></>;
@@ -41,13 +42,13 @@ export default function Integration({ title, summary, requiresLogin, systems, co
     }
 
     return (
-        <Box sx={{ bgcolor: 'rgb(236 254 255)', mb: 8, p: 2 }}>
+        <Box sx={{ bgcolor: grey[50], mb: 8, p: 2 }}>
             <Typography variant="h2" align="left" sx={{ color: 'rgb(55 65 81)' }} gutterBottom={true}>{title}</Typography>
 
             <Box sx={{ mb: 5, }}>
                 <SystemList systems={systems}></SystemList>
                 {summary
-                    ? <Box sx={{ display: 'flex', alignItems: 'center', color: 'primary.contrastText', bgcolor: 'rgb(8 145 178)', my: 2, p: 2 }}>{requiresLoginElement} {summary}</Box>
+                    ? <Box sx={{ display: 'flex', alignItems: 'center', color: grey[50], bgcolor: grey[700], my: 2, p: 2 }}>{requiresLoginElement} {summary}</Box>
                     : <></>
                 }
             </Box>

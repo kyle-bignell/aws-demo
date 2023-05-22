@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { blue, blueGrey } from '@mui/material/colors';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
-import Alert from '@mui/material/Alert';
+import { grey } from '@mui/material/colors';
+import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Integration, { Component } from './components/Integration';
@@ -74,14 +75,6 @@ const integrations: Array<IntegrationData> = [
 ];
 
 let theme = createTheme({
-  palette: {
-    primary: {
-      main: blue[500]
-    },
-    secondary: {
-      main: blueGrey[500]
-    },
-  },
   typography: {
     fontSize: 14,
   },
@@ -90,15 +83,45 @@ theme = responsiveFontSizes(theme);
 
 export default function App() {
   const urlSearchParams = new URLSearchParams(window.location.hash.substring(1));
-
   const [accessToken] = useState(urlSearchParams.get('access_token'));
   const [loggedIn, setLoggedIn] = useState(accessToken ? true : false);
   const apiURL = "https://ti7ac8cxbc.execute-api.eu-west-2.amazonaws.com/aws_demo_lambda_stage";
 
   return (
     <ThemeProvider theme={theme}>
+      <Link href="https://kylebignell.co.uk">
+        <Box
+          component="img"
+          sx={{
+            position: 'absolute',
+            top: 10,
+            left: 10,
+            maxHeight: '2.5rem'
+          }}
+          alt="Kyle Bignell logo"
+          src="logo.png"
+        />
+      </Link>
+
+      <Link href="https://github.com/kyle-bignell/aws-demo-front-end">
+        <Box
+          component="img"
+          sx={{
+            position: 'absolute',
+            top: 10,
+            right: 10,
+            maxHeight: '2.5rem'
+          }}
+          alt="GitHub logo"
+          src="github-logo.png"
+        />
+      </Link>
+
       <Container>
-        <Typography variant="h1" align="center" sx={{ color: 'rgb(55 65 81)', my: 8 }}>AWS Integrations Demo</Typography>
+        <Typography variant="h1" align="center" sx={{ color: 'rgb(8 145 178)', mt: 12 }}>AWS Integrations Demo</Typography>
+        <Typography variant="h2" align="center" sx={{ color: 'rgb(55 65 81)', mb: 12 }}>
+          Kyle Bignell
+        </Typography>
 
         <Stack>
           {integrations.map(integration => {
@@ -116,9 +139,9 @@ export default function App() {
           })}
         </Stack>
 
-        <Alert sx={{ mb: 5 }} severity="info">
-          AWS icons by <a href="https://awsicons.dev/">https://awsicons.dev/</a>. Source code available on <a href="https://github.com/kyle-bignell/aws-front-end-demo">GitHub</a>.
-        </Alert>
+        <Box sx={{ bgcolor: grey[50], mb: 8, p: 2, textAlign: 'center' }}>
+          AWS icons by <a href="https://awsicons.dev/">https://awsicons.dev/</a>. Source code available on <a href="https://github.com/kyle-bignell/aws-demo-front-end">GitHub</a>.
+        </Box>
       </Container>
       <Footer></Footer>
     </ThemeProvider>

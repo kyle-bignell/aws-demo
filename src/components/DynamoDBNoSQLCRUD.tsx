@@ -1,7 +1,8 @@
 import { ChangeEvent, useEffect, useState } from 'react';
+import { grey } from '@mui/material/colors';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { grey } from '@mui/material/colors';
+import Grid from '@mui/material/Unstable_Grid2';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Table from '@mui/material/Table';
@@ -223,23 +224,28 @@ export default function DynamoDBNoSQLCRUD(loggedIn: boolean, accessToken: string
                 </TableContainer>
             </Box>
 
-            <Box sx={{ mb: 5 }}>
-                <Typography variant="h3" align="left" sx={{ color: 'rgb(55 65 81)' }} gutterBottom={true}>Add entry</Typography>
-                <Stack spacing={1}>
-                    <TextField label="Id" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={addEntryId} onChange={onAddEntryIdChangeHandler} />
-                    <TextField label="Name" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={addEntryName} onChange={onAddEntryNameChangeHandler} />
-                    <TextField label="Price" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={addEntryPrice} onChange={onAddEntryPriceChangeHandler} />
-                    <Button variant="contained" sx={{ bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onAddEntryClickHandler}>Add entry</Button>
-                </Stack>
-            </Box>
-
-            <Box sx={{ mb: 5 }}>
-                <Stack spacing={1}>
-                    <Typography variant="h3" align="left" sx={{ color: 'rgb(55 65 81)' }} gutterBottom={true}>Get entry</Typography>
-                    <TextField label="Id" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={getEntryId} onChange={onGetEntryIdChangeHandler} />
-                    <Button variant="contained" sx={{ bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onGetEntryClickHandler}>Get entry</Button>
-                </Stack>
-            </Box>
+            <Grid container spacing={2}>
+                <Grid xs={12} sm={12} md={6}>
+                    <Box sx={{ mb: 5, maxWidth: '400px' }}>
+                        <Typography variant="h3" align="left" sx={{ color: 'rgb(55 65 81)' }} gutterBottom={true}>Add entry</Typography>
+                        <Stack spacing={1}>
+                            <TextField label="Id" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={addEntryId} onChange={onAddEntryIdChangeHandler} />
+                            <TextField label="Name" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={addEntryName} onChange={onAddEntryNameChangeHandler} />
+                            <TextField label="Price" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={addEntryPrice} onChange={onAddEntryPriceChangeHandler} />
+                            <Button variant="contained" sx={{ bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onAddEntryClickHandler}>Add entry</Button>
+                        </Stack>
+                    </Box>
+                </Grid>
+                <Grid xs={12} sm={12} md={6}>
+                    <Box sx={{ mb: 5, maxWidth: '400px' }}>
+                        <Typography variant="h3" align="left" sx={{ color: 'rgb(55 65 81)' }} gutterBottom={true}>Get entry</Typography>
+                        <Stack spacing={1}>
+                            <TextField label="Id" variant="outlined" sx={{ input: { bgcolor: grey[50] } }} value={getEntryId} onChange={onGetEntryIdChangeHandler} />
+                            <Button variant="contained" sx={{ bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onGetEntryClickHandler}>Get entry</Button>
+                        </Stack>
+                    </Box>
+                </Grid>
+            </Grid >
         </Box >
     );
 }
