@@ -54,14 +54,25 @@ const integrations: Array<IntegrationData> = [
     component: 'DynamoDBNoSQLCRUD',
   },
   {
-    title: 'CloudFront + S3 - Static Website Hosting',
-    summary: 'This demo is hosted in a S3 bucket which is automatically deployed to when any new code is pushed to GitHub using an AWS CodePipeline integration. The subdomain of kylebignell.co.uk is pointed to the AWS S3 bucket and SSL is provided using AWS CloudFront and Certificate Manager.',
+    title: 'Demo front-end',
+    summary: 'This front-end for this demo is a TypeScript React application. The files are automatically built and deployed from GitHub to a S3 bucket using an AWS CodePipeline integration. The aws.kylebignell.co.uk subdomain is pointed at the AWS S3 bucket and SSL is provided using AWS CloudFront and Certificate Manager.',
     requiresLogin: false,
     systems: [
       'AWS CloudFront',
       'AWS S3',
       'AWS CodePipeline',
-      'AWS Certificate Manager'
+      'AWS Certificate Manager',
+      'TypeScript',
+      'React'
+    ]
+  },
+  {
+    title: 'Demo back-end',
+    summary: 'The back-end for this demo is configured and deployed onto AWS using Terraform, the infrastrucutre as code tool. The AWS Lambda functions are written in TypeScript and compiled to Node.js 16 compatible JavaScript before being uploaded.',
+    requiresLogin: false,
+    systems: [
+      'TypeScript',
+      'Terraform'
     ]
   },
   {
