@@ -1,6 +1,14 @@
+@font-face {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('../public/Segoe_UI.ttf') format('ttf');
+}
+
 body {
   margin: 0;
-  font-family: 'Roboto', 'Oxygen';
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

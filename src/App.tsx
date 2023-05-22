@@ -76,6 +76,16 @@ const integrations: Array<IntegrationData> = [
 
 let theme = createTheme({
   typography: {
+    fontFamily: [
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
     fontSize: 14,
   },
 });
@@ -140,7 +150,7 @@ export default function App() {
         </Stack>
 
         <Box sx={{ bgcolor: grey[50], mb: 8, p: 2, textAlign: 'center' }}>
-          AWS icons by <a href="https://awsicons.dev/">https://awsicons.dev/</a>. Source code available on <a href="https://github.com/kyle-bignell/aws-demo-front-end">GitHub</a>.
+          <Typography>AWS icons by <a href="https://awsicons.dev/">https://awsicons.dev/</a>. Source code available on <a href="https://github.com/kyle-bignell/aws-demo-front-end">GitHub</a>.</Typography>
         </Box>
       </Container>
       <Footer></Footer>

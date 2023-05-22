@@ -48,7 +48,9 @@ export default function Integration({ title, summary, requiresLogin, systems, co
             <Box sx={{ mb: 5, }}>
                 <SystemList systems={systems}></SystemList>
                 {summary
-                    ? <Box sx={{ display: 'flex', alignItems: 'center', color: grey[50], bgcolor: grey[700], my: 2, p: 2 }}>{requiresLoginElement} {summary}</Box>
+                    ? <Box sx={{ display: 'flex', alignItems: 'center', color: grey[50], bgcolor: grey[700], my: 2, p: 2 }}>{requiresLoginElement}
+                        <Typography>{summary}</Typography>
+                    </Box>
                     : <></>
                 }
             </Box>

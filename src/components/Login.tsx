@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 export default function Login(loggedIn: boolean) {
     const onClickHandler = () => {
@@ -13,7 +14,9 @@ export default function Login(loggedIn: boolean) {
 
     return (
         <Box sx={{ mt: 8, mb: 5, textAlign: 'center' }}>
-            <Button variant="contained" sx={{ fontSize: '2rem', borderRadius: 0, bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onClickHandler}>Login</Button>
+            <Button variant="contained" sx={{ borderRadius: 0, bgcolor: 'rgb(8 145 178)', ':hover': { color: 'rgb(255, 255, 255)', bgcolor: 'rgb(55 65 81)' } }} onClick={onClickHandler}>
+                <Typography sx={{ fontSize: '2rem' }}>Login</Typography>
+            </Button>
         </Box>
     );
 }

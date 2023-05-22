@@ -1,6 +1,7 @@
 import { grey } from '@mui/material/colors';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
+import Typography from '@mui/material/Typography';
 import AWSAPIGatewayIcon from "./icons/AWSAPIGatewayIcon";
 import AWSCertifcateManagerIcon from "./icons/AWSCertificateManagerIcon";
 import AWSCloudFrontIcon from "./icons/AWSCloudFrontIcon";
@@ -47,7 +48,7 @@ export default function SystemList({ systems }: { systems: Systems }) {
                         <Box sx={{ mr: 1, p: 0, height: '40px' }}>
                             {systemIconMap[system]()}
                         </Box>
-                        {system}
+                        <Typography>{system}</Typography>
                     </Box>
                 </Grid>
             })}
